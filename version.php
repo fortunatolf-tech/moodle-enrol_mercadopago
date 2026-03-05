@@ -25,8 +25,8 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2022010402;
-$plugin->requires  = 2019111200;
+$plugin->version   = 2024042200; // Bump version for update
+$plugin->requires  = 2021051700; // Requires Moodle 3.11/4.0+ (PHP 7.3 compatible minimum)
 $plugin->component = 'enrol_mercadopago';
 $plugin->maturity = MATURITY_STABLE;
 $plugin->release = 'v1';

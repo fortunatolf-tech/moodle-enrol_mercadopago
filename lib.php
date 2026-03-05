@@ -168,9 +168,8 @@ class enrol_mercadopago_plugin extends enrol_plugin {
         $strcourses = get_string("courses");
 
         // Pass $view=true to filter hidden caps if the user cannot see them
-        if ($users = get_users_by_capability($context, 'moodle/course:update', 'u.*', 'u.id ASC',
-                                             '', '', '', '', false, true)) {
-            $users = sort_by_roleassignment_authority($users, $context);
+        $users = get_enrolled_users($context, 'moodle/course:update', 0, 'u.*', 'u.id ASC');
+        if (!empty($users)) {
             $teacher = array_shift($users);
         } else {
             $teacher = false;

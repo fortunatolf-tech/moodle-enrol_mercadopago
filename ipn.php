@@ -181,9 +181,8 @@ if ($payment->transaction_details->total_paid_amount >= $payment->transaction_am
 	$plugin->enrol_user($plugin_instance, $user->id, $plugin_instance->roleid, $timestart, $timeend);
 
 	// Pass $view=true to filter hidden caps if the user cannot see them
-	if ($users = get_users_by_capability($context, 'moodle/course:update', 'u.*', 'u.id ASC',
-		'', '', '', '', false, true)) {
-		$users = sort_by_roleassignment_authority($users, $context);
+	$users = get_enrolled_users($context, 'moodle/course:update', 0, 'u.*', 'u.id ASC');
+	if (!empty($users)) {
 		$teacher = array_shift($users);
 	} else {
 		$teacher = false;
