@@ -28,7 +28,7 @@ defined('MOODLE_INTERNAL') || die();
 class enrol_mercadopago_plugin extends enrol_plugin {
 
     public function get_currencies() {
-        $codes = array('COP', 'ARS', 'CLP', 'USD');
+        $codes = array('ARS', 'BRL', 'CLP', 'COP', 'MXN', 'PEN', 'UYU', 'USD');
         $currencies = array();
         foreach ($codes as $c) {
             $currencies[$c] = new lang_string($c, 'core_currencies');

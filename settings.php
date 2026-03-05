@@ -68,7 +68,7 @@ if ($ADMIN->fulltree) {
     $settings->add(new admin_setting_configtext('enrol_mercadopago/cost', get_string('cost', 'enrol_mercadopago'), '', 0, PARAM_FLOAT, 4));
 
     $currencies = enrol_get_plugin('mercadopago')->get_currencies();
-    $settings->add(new admin_setting_configselect('enrol_mercadopago/currency', get_string('currency', 'enrol_mercadopago'), '', 'USD', $currencies));
+    $settings->add(new admin_setting_configselect('enrol_mercadopago/currency', get_string('currency', 'enrol_mercadopago'), '', 'BRL', $currencies));
 
     if (!during_initial_install()) {
         $options = get_default_enrol_roles(context_system::instance());
